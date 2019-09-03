@@ -1,19 +1,25 @@
 {
-  "name": "boilerplate",
+  "name": "vue-typescript-boilerplate",
   "version": "0.1.0",
   "private": true,
+  "description": "A Vue boilerplate written in TypeScript.",
+  "author": "Ustym Ukhman <ustym.ukhman@gmail.com>",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lint:style": "vue-cli-service lint:style"
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "mobile-detect": "^1.4.3",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
     "vue-router": "^3.0.3"
   },
   "devDependencies": {
+    "@ascendancyy/vue-cli-plugin-stylelint": "^1.1.2",
+    "@types/modernizr": "^3.5.3",
     "@vue/cli-plugin-babel": "^3.11.0",
     "@vue/cli-plugin-eslint": "^3.11.0",
     "@vue/cli-plugin-pwa": "^3.11.0",
@@ -26,7 +32,11 @@
     "eslint-plugin-vue": "^5.0.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.1.0",
+    "stylelint-config-standard": "^18.2.0",
     "typescript": "^3.4.3",
-    "vue-template-compiler": "^2.6.10"
-  }
+    "vue-template-compiler": "^2.6.10",
+    "webpack-modernizr-loader": "^5.0.0"
+  },
+  "multilanguage": false,
+  "domain": ""
 }

@@ -1,4 +1,6 @@
-# boilerplate
+# vue-typescript-boilerplate
+
+*A Vue boilerplate written in TypeScript.*
 
 ## Project setup
 ```
