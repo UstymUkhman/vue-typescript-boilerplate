@@ -7,42 +7,34 @@ import './service-worker'
 
 import Vue from 'vue'
 import App from './App.vue'
-
-import platform from './platform'
 import config from '../package.json'
-import router from './plugins/router'
+import router from '@/plugins/router'
 
 import axios from 'axios'
 import Meta from 'vue-meta'
 import Axios from 'vue-axios'
 import Events from 'vue-event-handler'
 
-import { language, prerenderer } from '@/platform'
-
-console.log(language, prerenderer)
-
 Vue.use(Meta)
 Vue.use(Events)
 Vue.use(Axios, axios)
+
+let currentLanguage: string
 Vue.config.productionTip = false
+
+router.beforeEach((to, from, next) => {
+  currentLanguage = to.params.language || ''
+  next()
+})
 
 /* eslint-disable no-new */
 new Vue({
   router,
   el: '#app',
 
-  computed: {
-    platform () {
-      return platform
-    },
-
-    multilanguage () {
-      return config.multilanguage
-    }
-  },
-
   render: create => create(App, {
     props: {
+      language: currentLanguage,
       version: config.version,
       domain: config.domain
     }
