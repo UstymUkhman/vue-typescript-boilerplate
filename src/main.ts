@@ -2,8 +2,8 @@ import 'babel-polyfill'
 import 'console-polyfill'
 
 import './service-worker'
-// import './plugins/locale.js'
-// import './plugins/analytics.js'
+import './plugins/locale'
+import './plugins/analytics'
 
 import Vue from 'vue'
 import App from './App.vue'
@@ -23,7 +23,7 @@ let currentLanguage: string
 Vue.config.productionTip = false
 
 router.beforeEach((to, from, next) => {
-  currentLanguage = to.params.language || ''
+  currentLanguage = to.params.language || 'en'
   next()
 })
 

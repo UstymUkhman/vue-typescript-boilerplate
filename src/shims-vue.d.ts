@@ -9,4 +9,5 @@ declare module "*.json" {
   export const lang = 'test'
 }
 
+declare module 'vue-analytics'
 declare module 'vue-event-handler'
