@@ -6,4 +6,7 @@ declare module '*.vue' {
 declare module "*.json" {
   const value: any
   export default value
+  export const lang = 'test'
 }
+
+declare module 'vue-event-handler'

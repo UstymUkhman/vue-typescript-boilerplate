@@ -13,3 +13,14 @@ declare global {
     }
   }
 }
+
+declare global {
+  type callback = () => string
+
+  interface Route {
+    redirect?: string | callback,
+    component?: any,
+    name?: string,
+    path: string
+  }
+}

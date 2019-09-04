@@ -2,10 +2,7 @@ import modernizr from 'modernizr'
 const MobileDetect = require('mobile-detect')
 const md = new MobileDetect(window.navigator.userAgent)
 
-// const volumeTest = document.createElement('audio')
-// volumeTest.volume = 0.5
-
-const Platform: any = {
+const platform: any = {
   mobile: !!md.mobile(),
   tablet: !!md.tablet(),
   phone: !!md.phone(),
@@ -20,16 +17,23 @@ const Platform: any = {
   edge: !!/Edge\/\d+/i.test(window.navigator.userAgent),
   ie11: !!/Trident.*rv:11\./i.test(window.navigator.userAgent),
   safari: /Safari/.test(window.navigator.userAgent) && /Apple Computer/.test(window.navigator.vendor),
-  isIE: navigator.userAgent.match(/MSIE 10/i) || !!/Trident.*rv:11\./i.test(window.navigator.userAgent) // ,
-
-  // prerenderer: window['__PRERENDER_INJECTED'] !== undefined,
-  // volume: volumeTest.volume === 0.5
+  isIE: window.navigator.userAgent.match(/MSIE 10/i) || !!/Trident.*rv:11\./i.test(window.navigator.userAgent)
 }
 
-for (const key in Platform) {
+let userLanguage: string = 'en'
+const navigator: any = window.navigator
+const mainLanguage: string = navigator.languages ? navigator.languages[0] : ''
+
+if (navigator && navigator.userLanguage) {
+  userLanguage = navigator.userLanguage
+}
+
+for (const key in platform) {
   modernizr.addTest(key, () => {
-    return Platform[key] as boolean
+    return platform[key]
   })
 }
 
-export default Platform
+export const language = mainLanguage || navigator.language || userLanguage
+export const prerenderer = false // window['__PRERENDER_INJECTED'] !== undefined
+export default platform
