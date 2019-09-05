@@ -32,7 +32,9 @@ module.exports = {
     }
   },
 
-  chainWebpack (config) {
+  chainWebpack: config => {
+    config.plugins.delete('fork-ts-checker')
+
     config.module
       .rule('vue')
       .use('vue-loader')
@@ -44,6 +46,18 @@ module.exports = {
           preserveWhitespace: true
         }
       }))
+
+    // config.module
+    //   .rule('ts')
+    //   .test(/\.tsx?$/)
+    //   .use('ts-loader')
+    //   .tap(options => {
+    //     return {
+    //       ...options,
+    //       transpileOnly: false,
+    //       appendTsSuffixTo: [/\.vue$/]
+    //     }
+    //   })
 
     config.module
       .rule('modernizr')

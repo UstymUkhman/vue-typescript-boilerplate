@@ -36,22 +36,17 @@ export default Vue.extend({
     }
   },
 
-  // data () {
-  //   return {
-  //   }
-  // },
-
   mounted () {
     // Welcome Message
     const welcome: string = this.$gettext('Welcome!')
-    console.log(welcome)
+    // console.log(welcome, this.$language.available, this.$language.current)
   },
 
   metaInfo () {
     return {
       title: ' ',
-      htmlAttrs: { lang: this.language },
       titleTemplate: '%s | Vue Boilerplate',
+      htmlAttrs: { lang: this.$language.current },
 
       meta: [
         // Generic meta tags:
