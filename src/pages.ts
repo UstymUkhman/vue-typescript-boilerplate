@@ -1,11 +1,11 @@
 const routes: Array<Route> = [
   {
     path: '/',
-    name: 'home',
+    name: 'Home',
     component: () => import(/* webpackChunkName: "home" */ './views/Home.vue')
   },
   {
-    name: 'about',
+    name: 'About',
     path: '/about',
     component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
   }

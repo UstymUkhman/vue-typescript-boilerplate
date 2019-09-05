@@ -8,7 +8,9 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lint:style": "vue-cli-service lint:style"
+    "lint:style": "vue-cli-service lint:style",
+    "locale:extract": "node node_modules/vue-webpack-gettext/extract --output locale/template.pot --src src",
+    "locale:compile": "node node_modules/vue-webpack-gettext/compile --output src/assets/data/locale --src locale/translated --multiple"
   },
   "dependencies": {
     "animejs": "^3.1.0",
@@ -51,6 +53,7 @@
     "stylelint-config-standard": "^18.2.0",
     "typescript": "^3.4.3",
     "vue-template-compiler": "^2.6.10",
+    "vue-webpack-gettext": "^0.3.1",
     "webpack-modernizr-loader": "^5.0.0"
   },
   "multilanguage": false,

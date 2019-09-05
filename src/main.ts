@@ -19,13 +19,16 @@ Vue.use(Meta)
 Vue.use(Events)
 Vue.use(Axios, axios)
 
-let currentLanguage: string
+// let currentLanguage: string
 Vue.config.productionTip = false
 
 router.beforeEach((to, from, next) => {
-  currentLanguage = to.params.language || 'en'
+  Vue.config.language = to.params.language || 'en'
+  // currentLanguage = to.params.language || 'en'
   next()
 })
+
+console.log(Vue.config.language)
 
 /* eslint-disable no-new */
 new Vue({
@@ -34,7 +37,7 @@ new Vue({
 
   render: create => create(App, {
     props: {
-      language: currentLanguage,
+      language: Vue.config.language, // currentLanguage,
       version: config.version,
       domain: config.domain
     }

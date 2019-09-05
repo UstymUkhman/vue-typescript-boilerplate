@@ -1,5 +1,5 @@
 import Vue from 'vue'
-import GetTextPlugin from 'vue-gettext'
+import GetText from 'vue-gettext'
 import languages from '@/assets/data/languages.json'
 
 let translations: any = {}
@@ -12,7 +12,7 @@ async function loadTranslations (lang: string): Promise<any> {
 
 Object.keys(languages).forEach(loadTranslations)
 
-Vue.use(GetTextPlugin, {
+Vue.use(GetText, {
   availableLanguages: languages,
   translations: translations,
   defaultLanguage: 'en',

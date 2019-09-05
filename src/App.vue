@@ -11,8 +11,12 @@
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue'
+
+export default Vue.extend({
+  name: 'App' as string,
+
   props: {
     version: {
       type: String,
@@ -38,49 +42,49 @@ export default {
   // },
 
   mounted () {
-    console.log('Welcome!')
+    // Welcome Message
+    const welcome: string = this.$gettext('Welcome!')
+    console.log(welcome)
   },
 
   metaInfo () {
     return {
       title: ' ',
-      base: { href: '/' },
       htmlAttrs: { lang: this.language },
       titleTemplate: '%s | Vue Boilerplate',
 
       meta: [
+        // Generic meta tags:
         { name: 'fragment', content: '!' },
         { name: 'theme-color', content: '#000000' },
         { name: 'mobile-web-app-capable', content: 'yes' },
-        { 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' },
 
+        // OS meta tags:
         { name: 'msapplication-tap-highlight', content: 'no' },
         { name: 'msapplication-TileColor', content: '#000000' },
         { name: 'apple-mobile-web-app-capable', content: 'yes' },
         { name: 'msapplication-TileImage', content: '/ms-icon-144x144.png' },
-        { name: 'viewport', content: 'width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no' },
 
+        // Twitter meta tags:
         { name: 'twitter:site', content: '' },
         { name: 'twitter:creator', content: '' },
         { name: 'twitter:card', content: 'summary_large_image' },
+        { vmid: 'twitterimage', property: 'twitter:image', content: `${this.domain}/img/share.jpg` },
+        { vmid: 'description', name: 'description', content: 'A Vue boilerplate written in TypeScript.' },
 
+        // Facebook meta tags:
         { vmid: 'ogtype', property: 'og:type', content: 'website' },
         { vmid: 'ogurl', property: 'og:url', content: `${this.domain}/` },
-        { vmid: 'ogtitle', property: 'og:title', itemprop: 'name', content: '' },
-
         { vmid: 'ogimagewidth', property: 'og:image:height', content: '630' },
         { vmid: 'ogimageheight', property: 'og:image:width', content: '1200' },
+        { vmid: 'ogtitle', property: 'og:title', itemprop: 'name', content: '' },
         { vmid: 'ogimagetype', property: 'og:image:type', content: 'image/jpeg' },
-
         { vmid: 'ogimage', property: 'og:image', content: `${this.domain}/img/share.jpg` },
-        { vmid: 'twitterimage', property: 'twitter:image', content: `${this.domain}/img/share.jpg` },
-
-        { vmid: 'description', name: 'description', content: 'A Vue boilerplate written in TypeScript.' },
         { vmid: 'ogdescription', property: 'og:description', content: 'A Vue boilerplate written in TypeScript.' }
       ]
     }
   }
-}
+})
 </script>
 
 <style lang="scss">

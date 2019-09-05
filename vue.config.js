@@ -20,7 +20,7 @@ module.exports = {
     // plugins: [],
 
     resolve: {
-      extensions: ['.js', '.vue', '.json'],
+      extensions: ['.ts', '.js', '.vue', '.json'],
 
       alias: {
         modernizr$: path.resolve(__dirname, '.modernizrrc'),
