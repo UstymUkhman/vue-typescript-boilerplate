@@ -84,13 +84,13 @@ export default Vue.extend({
 
 <style lang="scss">
 @import '~node-reset-scss/scss/reset';
-// @import 'variables';
-// @import 'fonts';
+@import 'variables';
+@import 'fonts';
 
 html,
 body,
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'White Rabbit', Helvetica, Arial, sans-serif;
   -webkit-text-rendering: optimizeLegibility;
   -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
@@ -98,7 +98,7 @@ body,
 
   text-rendering: optimizeLegibility;
   font-variant-ligatures: none;
-  background-color: #fff;
+  background-color: $white;
   text-size-adjust: 100%;
 
   letter-spacing: normal;
@@ -107,7 +107,7 @@ body,
 
   position: absolute;
   overflow: hidden;
-  color: #000;
+  color: $black;
 
   height: 100%;
   width: 100%;
