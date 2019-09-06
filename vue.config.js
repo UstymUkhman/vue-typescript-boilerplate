@@ -1,12 +1,16 @@
 const path = require('path')
 const webpack = require('webpack')
 
-// https://cli.vuejs.org/config/
-// https://cli.vuejs.org/guide/webpack.html
+const webpackPlugins = []
+
+if (process.env.NODE_ENV === 'development') {
+  webpackPlugins.push(new webpack.HotModuleReplacementPlugin())
+  webpackPlugins.push(new webpack.NamedModulesPlugin())
+}
 
 module.exports = {
   publicPath: '/',
-  assetsDir: 'root',
+  assetsDir: 'assets',
   runtimeCompiler: true,
 
   css: {
@@ -19,10 +23,7 @@ module.exports = {
   },
 
   configureWebpack: {
-    plugins: [
-      new webpack.HotModuleReplacementPlugin(),
-      new webpack.NamedModulesPlugin()
-    ],
+    plugins: webpackPlugins,
 
     resolve: {
       extensions: ['.ts', '.js', '.vue', '.json'],
@@ -51,18 +52,6 @@ module.exports = {
           preserveWhitespace: true
         }
       }))
-
-    // config.module
-    //   .rule('ts')
-    //   .test(/\.tsx?$/)
-    //   .use('ts-loader')
-    //   .tap(options => {
-    //     return {
-    //       ...options,
-    //       transpileOnly: false,
-    //       appendTsSuffixTo: [/\.vue$/]
-    //     }
-    //   })
 
     config.module
       .rule('modernizr')

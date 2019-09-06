@@ -51,14 +51,11 @@ export default Vue.extend({
       meta: [
         // Generic meta tags:
         { name: 'fragment', content: '!' },
-        { name: 'theme-color', content: '#000000' },
+        { name: 'theme-color', content: '#4DBA87' },
         { name: 'mobile-web-app-capable', content: 'yes' },
-
-        // OS meta tags:
         { name: 'msapplication-tap-highlight', content: 'no' },
-        { name: 'msapplication-TileColor', content: '#000000' },
+        { name: 'msapplication-TileColor', content: '#4DBA87' },
         { name: 'apple-mobile-web-app-capable', content: 'yes' },
-        { name: 'msapplication-TileImage', content: '/ms-icon-144x144.png' },
 
         // Twitter meta tags:
         { name: 'twitter:site', content: '' },
