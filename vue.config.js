@@ -1,4 +1,6 @@
 const path = require('path')
+const webpack = require('webpack')
+
 // https://cli.vuejs.org/config/
 // https://cli.vuejs.org/guide/webpack.html
 
@@ -17,7 +19,10 @@ module.exports = {
   },
 
   configureWebpack: {
-    // plugins: [],
+    plugins: [
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.NamedModulesPlugin()
+    ],
 
     resolve: {
       extensions: ['.ts', '.js', '.vue', '.json'],
