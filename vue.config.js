@@ -1,7 +1,7 @@
+const webpackPlugins = []
 const path = require('path')
 const webpack = require('webpack')
-
-const webpackPlugins = []
+const pages = require('./src/pages.json')
 
 if (process.env.NODE_ENV === 'development') {
   webpackPlugins.push(new webpack.HotModuleReplacementPlugin())
@@ -19,7 +19,15 @@ module.exports = {
 
   pluginOptions: {
     lintStyleOnBuild: true,
-    stylelint: {}
+    stylelint: {},
+
+    prerenderSpa: {
+      headless: true,
+      registry: undefined,
+      onlyProduction: true,
+      useRenderEvent: false,
+      renderRoutes: Array.from(pages, page => page.path)
+    }
   },
 
   configureWebpack: {

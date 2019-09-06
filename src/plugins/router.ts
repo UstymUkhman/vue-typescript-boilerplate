@@ -1,12 +1,31 @@
 import Vue from 'vue'
-import pages from '../pages'
 import Router from 'vue-router'
+import pages from '../pages.json'
 
 import config from '../../package.json'
 import { language, prerenderer } from '@/platform'
 import languages from '@/assets/data/languages.json'
 
-let routes: Array<Route> = pages
+type callback = () => string
+
+interface Route {
+  redirect?: string | callback,
+  component?: any,
+  name?: string,
+  path: string
+}
+
+let routes: Array<Route> = Array.from(pages, (page: Route) => {
+  return {
+    name: page.name,
+    path: page.path,
+
+    component: () => import(
+      /* webpackChunkName: "[request]" */
+      `../pages/${page.name}.vue`
+    )
+  }
+})
 
 if (config.multilanguage) {
   let possibleLanguages: string = ''
