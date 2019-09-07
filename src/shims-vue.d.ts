@@ -8,5 +8,6 @@ declare module "*.json" {
   export default value
 }
 
+declare module 'vue-cookie'
 declare module 'vue-analytics'
 declare module 'vue-event-handler'

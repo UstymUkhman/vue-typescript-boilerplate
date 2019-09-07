@@ -29,6 +29,7 @@
     "vue": "^2.6.10",
     "vue-analytics": "^5.17.2",
     "vue-axios": "^2.1.4",
+    "vue-cookie": "^1.1.4",
     "vue-event-handler": "^1.1.8",
     "vue-gettext": "^2.1.5",
     "vue-meta": "^2.2.2",

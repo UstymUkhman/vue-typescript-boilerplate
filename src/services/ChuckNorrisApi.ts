@@ -17,7 +17,7 @@ interface ResponceData {
 class ChuckNorrisApi {
   private _model: any = null
 
-  private _apis: Endpoints = {
+  private readonly _apis: Endpoints = {
     categories: 'https://api.chucknorris.io/jokes/categories',
     randomQuote: 'https://api.chucknorris.io/jokes/random',
     search: 'https://api.chucknorris.io/jokes/search'
