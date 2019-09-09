@@ -5,6 +5,7 @@ import pages from '../pages.json'
 import config from '../../package.json'
 import { language, prerenderer } from '@/platform'
 import languages from '@/assets/data/languages.json'
+import { validInterfaceParameter } from '@/utils/interface'
 
 type callback = () => string
 
@@ -35,14 +36,7 @@ if (config.multilanguage) {
     return languages[userLanguage] ? userLanguage : Object.keys(languages)[0]
   }
 
-  const validRouteParameter = (route: Route, param: string): param is keyof Route => {
-    return param in route
-  }
-
-  Object.keys(languages).forEach((lang) => {
-    possibleLanguages += lang + '|'
-  })
-
+  Object.keys(languages).forEach((lang) => { possibleLanguages += lang + '|' })
   possibleLanguages = possibleLanguages.substring(0, possibleLanguages.lastIndexOf('|'))
 
   routes.forEach(route => {
@@ -54,7 +48,7 @@ if (config.multilanguage) {
       }
 
       Object.keys(route).forEach((key: string) => {
-        if (validRouteParameter(route, key)) {
+        if (validInterfaceParameter(route, key)) {
           duplicate[key] = route[key]
         }
       })

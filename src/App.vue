@@ -13,6 +13,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import { copyInterface } from '@/utils/interface'
 
 export default Vue.extend({
   name: 'App' as string,

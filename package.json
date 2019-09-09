@@ -58,6 +58,6 @@
     "vue-webpack-gettext": "^0.3.1",
     "webpack-modernizr-loader": "^5.0.0"
   },
-  "multilanguage": false,
+  "multilanguage": true,
   "domain": ""
 }
