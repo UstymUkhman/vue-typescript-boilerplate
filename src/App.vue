@@ -62,7 +62,7 @@ export default Vue.extend({
         { name: 'twitter:site', content: '' },
         { name: 'twitter:creator', content: '' },
         { name: 'twitter:card', content: 'summary_large_image' },
-        { vmid: 'twitterimage', property: 'twitter:image', content: `${this.domain}/img/share.jpg` },
+        { vmid: 'twitter:image', property: 'twitter:image', content: `${this.domain}/img/share.jpg` },
         { vmid: 'description', name: 'description', content: 'A Vue boilerplate written in TypeScript.' },
 
         // Facebook meta tags:
