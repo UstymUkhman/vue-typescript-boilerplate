@@ -1,5 +1,5 @@
 <template>
-  <div class="about">
+  <div class="about-page">
     <h1>This is an about page</h1>
   </div>
 </template>
@@ -7,10 +7,6 @@
 <script lang="ts">
 export default Vue.extend({
   name: 'About' as string,
-
-  created () {
-    console.log('About Page')
-  },
 
   metaInfo () {
     return {

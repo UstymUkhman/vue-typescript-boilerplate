@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home-page">
     <img alt="Vue logo" src="@/assets/img/logo.png">
     <span translate-comment="Welcome Message" v-translate>Welcome!</span>
   </div>
@@ -9,7 +9,7 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'Home',
+  name: 'Home' as string,
 
   metaInfo () {
     return {

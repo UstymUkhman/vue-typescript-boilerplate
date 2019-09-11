@@ -13,6 +13,9 @@
     "locale:compile": "node node_modules/vue-webpack-gettext/compile --output src/assets/data/locale --src locale/translated --multiple"
   },
   "dependencies": {
+    "@hughsk/fulltilt": "^0.7.1",
+    "@types/lodash": "^4.14.138",
+    "@types/markdown-it": "^0.0.8",
     "animejs": "^3.1.0",
     "await-to-js": "^2.1.1",
     "axios": "^0.19.0",
@@ -20,8 +23,6 @@
     "breakpoint-sass": "^2.7.1",
     "console-polyfill": "^0.3.0",
     "core-js": "^2.6.5",
-    "lodash": "^4.17.15",
-    "markdown-it": "^9.1.0",
     "markdown-it-link-attributes": "^2.1.0",
     "mobile-detect": "^1.4.3",
     "node-reset-scss": "^1.0.1",

@@ -40,7 +40,6 @@ export default Vue.extend({
   mounted () {
     // Welcome Message
     const welcome: string = this.$gettext('Welcome!')
-    // console.log(welcome, this.$language.available, this.$language.current)
   },
 
   metaInfo () {

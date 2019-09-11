@@ -1,5 +1,5 @@
 <template>
-  <div class="rest-api">
+  <div class="rest-api-page">
   </div>
 </template>
 
