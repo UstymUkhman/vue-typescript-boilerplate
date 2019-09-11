@@ -1,9 +1,15 @@
+// import 'whatwg-fetch'
 import 'babel-polyfill'
 import 'console-polyfill'
+// import 'object-fit-images'
+import 'intersection-observer'
 
 import './service-worker'
 import './plugins/locale'
 import './plugins/analytics'
+
+// IE10 polyfill for dynamic imports:
+// import 'core-js/modules/es.array.iterator'
 
 import Vue from 'vue'
 import App from './App.vue'

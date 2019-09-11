@@ -1,7 +1,7 @@
 import mila from 'markdown-it-link-attributes'
 import MarkdownIt from 'markdown-it'
 
-const getTemplate = (text: any, inline: boolean = false, rootTag: string = 'span') => {
+const getTemplate = (text: any, rootTag: string = 'span', inline: boolean = false) => {
   if (inline && !rootTag) {
     return console.error('[markdown] When using inline option you must specify a root tag')
   }
@@ -14,9 +14,9 @@ const getTemplate = (text: any, inline: boolean = false, rootTag: string = 'span
   })
 }
 
-const getComponent = (text: any, inline: boolean = false, rootTag: string = 'div') => {
+const getComponent = (text: any, rootTag: string = 'div', inline: boolean = false) => {
   return {
-    template: getTemplate(text, inline, rootTag),
+    template: getTemplate(text, rootTag, inline),
     name: 'Markdown'
   }
 }

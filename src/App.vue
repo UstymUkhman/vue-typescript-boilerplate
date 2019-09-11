@@ -1,9 +1,9 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-    </div>
+    </div> -->
 
     <transition appear mode="out-in">
       <router-view class="page" />
@@ -92,6 +92,7 @@ body,
   -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-overflow-scrolling: touch;
 
   text-rendering: optimizeLegibility;
   font-variant-ligatures: none;
@@ -114,8 +115,11 @@ body,
 }
 
 .page {
+  -webkit-overflow-scrolling: touch;
   box-sizing: border-box;
   position: absolute;
+
+  overflow-x: hidden;
   overflow-y: auto;
 
   min-height: 100vh;
@@ -153,18 +157,20 @@ body,
 // p {
 // }
 
-// span {
-// }
+strong {
+  font-weight: bold;
+}
 
-// a {
+// span {
 // }
 
 em {
   font-style: italic;
 }
 
-strong {
-  font-weight: bold;
+a {
+  color: inherit;
+  outline: 0;
 }
 
 // input,

@@ -25,9 +25,13 @@
     <link rel="icon" type="image/png" sizes="96x96"   href="assets/icons/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/android-icon-192x192.png">
 
-    <link href="<%= BASE_URL %>assets/css/base.css" rel="stylesheet">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+    <!-- vue-cli-plugin-prerender-spa breaks `BASE_URL` variable on `yarn build` D: -->
+    <!-- <link href="<%= BASE_URL %>assets/css/base.css" rel="stylesheet"> -->
+    <!-- <link rel="icon" href="<%= BASE_URL %>favicon.ico"> -->
+
+    <link href="/assets/css/base.css" rel="stylesheet">
     <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="/favicon.ico">
   </head>
 
   <body>

@@ -1,12 +1,30 @@
+const routes = []
 const webpackPlugins = []
+
 const path = require('path')
 const webpack = require('webpack')
+const config = require('./package.json')
 const pages = require('./src/pages.json')
+const languages = require('./src/assets/data/languages.json')
 
 if (process.env.NODE_ENV === 'development') {
   webpackPlugins.push(new webpack.HotModuleReplacementPlugin())
   webpackPlugins.push(new webpack.NamedModulesPlugin())
 }
+
+(function () {
+  if (config.multilanguage) {
+    Object.keys(languages).forEach((lang) => {
+      Array.from(pages, page => {
+        routes.push(`/${lang}${page.path}`)
+      })
+    })
+  } else {
+    Array.from(pages, page => {
+      routes.push(page.path)
+    })
+  }
+})()
 
 module.exports = {
   publicPath: '/',
@@ -24,9 +42,9 @@ module.exports = {
     prerenderSpa: {
       headless: true,
       registry: undefined,
+      renderRoutes: routes,
       onlyProduction: true,
-      useRenderEvent: false,
-      renderRoutes: Array.from(pages, page => page.path)
+      useRenderEvent: false
     }
   },
 
