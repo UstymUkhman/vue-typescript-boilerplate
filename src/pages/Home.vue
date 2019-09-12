@@ -1,7 +1,9 @@
 <template>
   <main class="home-page">
-    <img alt="Vue logo" src="@/assets/img/logo.png">
-    <span translate-comment="Welcome Message" v-translate>Welcome!</span>
+    <section class="home-page-content">
+      <img alt="Vue logo" src="@/assets/img/logo.png">
+      <span translate-comment="Welcome Message" v-translate>Welcome!</span>
+    </section>
   </main>
 </template>
 
@@ -10,6 +12,8 @@ import Vue from 'vue'
 
 export default Vue.extend({
   name: 'Home' as string,
+
+  // centered
 
   metaInfo () {
     return {
@@ -24,3 +28,33 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+@import 'mixins';
+
+section {
+  @include centered;
+  height: 250px;
+  width: 300px;
+}
+
+img {
+  margin: 0 50px;
+  height: 200px;
+  width: auto;
+}
+
+span {
+  white-space: nowrap;
+  text-align: center;
+  position: absolute;
+
+  line-height: 25px;
+  font-size: 20px;
+  margin: auto;
+
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+</style>

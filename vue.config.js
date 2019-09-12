@@ -10,15 +10,23 @@ if (process.env.NODE_ENV === 'development') {
   webpackPlugins.push(new webpack.NamedModulesPlugin())
 }
 
-const routes = pages.map(page => {
+const routes = (function () {
+  const paths = pages.map(page => page.path)
+
   if (config.multilanguage) {
-    Object.keys(languages).forEach((lang) => {
-      return `/${lang}${page.path}`
+    const languagePaths = []
+
+    Object.keys(languages).forEach(lang => {
+      paths.forEach(path => {
+        languagePaths.push(`/${lang}${path}`)
+      })
     })
+
+    return languagePaths
   }
 
-  return page.path
-})
+  return paths
+})()
 
 module.exports = {
   publicPath: '/',

@@ -1,10 +1,14 @@
 <template>
   <section class="rest-api-page">
+    <transition appear>
+      <span v-if="randomQuote.length" class="quote">{{ randomQuote }}</span>
+    </transition>
   </section>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import { capitalize } from '@/utils/string'
 import ChuckNorrisApi from '@/services/ChuckNorrisApi'
 
 export default Vue.extend({
@@ -20,6 +24,12 @@ export default Vue.extend({
         loading: false as boolean,
         random: '' as string
       }
+    }
+  },
+
+  computed: {
+    randomQuote () {
+      return this.quotes.random ? capitalize(this.quotes.random) : ''
     }
   },
 
@@ -57,3 +67,11 @@ export default Vue.extend({
   }
 })
 </script>
+
+<style lang="scss" scoped>
+@import 'mixins';
+
+.quote {
+  @include centered;
+}
+</style>

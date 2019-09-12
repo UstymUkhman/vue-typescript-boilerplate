@@ -10,7 +10,7 @@
     </router-link>
 
     <SitePages />
-    <LanguageSelector />
+    <LanguageSelector v-if="multilanguage" />
   </header>
 </template>
 
@@ -25,6 +25,14 @@ export default Vue.extend({
   components: {
     LanguageSelector,
     SitePages
+  },
+
+  props: {
+    multilanguage: {
+      type: Boolean,
+      default: false,
+      required: false
+    }
   }
 })
 </script>

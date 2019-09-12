@@ -2,10 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import pages from '@/pages.json'
 
+import { language } from '@/platform'
 import config from '../../package.json'
-import { language, prerenderer } from '@/platform'
 import languages from '@/assets/data/languages.json'
-import { validInterfaceParameter } from '@/utils/interface'
 
 type callback = () => string
 
@@ -30,7 +29,7 @@ let routes: Array<Route> = pages.map((page: Route) => {
 
 if (config.multilanguage) {
   let possibleLanguages: string = ''
-  const userLanguage: string = prerenderer ? 'en' : language.split('-')[0]
+  const userLanguage: string = language.split('-')[0]
 
   const getValidLanguage = (): string => {
     return languages[userLanguage] ? userLanguage : Object.keys(languages)[0]
@@ -41,21 +40,6 @@ if (config.multilanguage) {
 
   routes.forEach(route => {
     route.path = `/:language(${possibleLanguages})${route.path}/`
-
-    if (prerenderer) {
-      const duplicate: Route = {
-        path: route.path
-      }
-
-      Object.keys(route).forEach((key: string) => {
-        if (validInterfaceParameter(route, key)) {
-          duplicate[key] = route[key]
-        }
-      })
-
-      duplicate.name = route.name + '-prerenderer'
-      routes.push(duplicate)
-    }
   })
 
   routes = routes.concat([{

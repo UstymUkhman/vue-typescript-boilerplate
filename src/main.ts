@@ -40,6 +40,7 @@ new Vue({
 
   render: create => create(App, {
     props: {
+      multilanguage: config.multilanguage,
       language: Vue.config.language,
       version: config.version,
       domain: config.domain

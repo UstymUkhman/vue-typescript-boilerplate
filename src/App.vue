@@ -1,9 +1,13 @@
 <template>
   <div id="app">
-    <SiteHeader />
+    <SiteHeader :multilanguage="multilanguage" />
 
     <transition appear mode="out-in">
-      <router-view class="page" />
+      <router-view
+        itemtype="https://schema.org/mainEntity"
+        itemprop="mainEntity"
+        class="page"
+      />
     </transition>
   </div>
 </template>
@@ -35,6 +39,12 @@ export default Vue.extend({
     domain: {
       default: '',
       type: String,
+      required: false
+    },
+
+    multilanguage: {
+      type: Boolean,
+      default: false,
       required: false
     }
   },

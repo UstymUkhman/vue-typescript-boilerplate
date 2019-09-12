@@ -6,6 +6,17 @@
   background: linear-gradient(to right, $color1 $from, $color2 $to);
 }
 
+@mixin centered {
+  transform: translate(-50%, -50%);
+  position: absolute;
+
+  display: block;
+  margin: auto;
+
+  left: 50%;
+  top: 50%;
+}
+
 @mixin desktop-hover {
   html.no-mobile & {
     &:hover {

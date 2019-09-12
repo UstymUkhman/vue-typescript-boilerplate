@@ -25,23 +25,30 @@ export default Vue.extend({
 
 <style lang="scss" scoped>
 nav {
+  transform: translateX(-50%);
   vertical-align: top;
   text-align: center;
 
+  position: absolute;
+  display: table;
+
   height: 100%;
-  width: auto;
+  left: 50%;
+  right: 0;
 }
 
 .site-page {
+  box-sizing: border-box;
   display: inline-block;
   text-align: center;
-  padding: 0 10px;
 
+  min-width: 100px;
+  padding: 0 10px;
   height: 100%;
-  width: auto;
 
   a {
     line-height: 50px;
+    font-size: 18px;
   }
 }
 </style>
