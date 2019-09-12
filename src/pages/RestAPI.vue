@@ -1,6 +1,6 @@
 <template>
-  <div class="rest-api-page">
-  </div>
+  <section class="rest-api-page">
+  </section>
 </template>
 
 <script lang="ts">

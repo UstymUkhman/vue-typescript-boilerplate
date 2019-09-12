@@ -37,8 +37,8 @@ const PAGE_HEIGHT: number = 800
  * In your event callback, use this code to get sane interpretation of the deltas.
  * This code will return an object with properties:
  *
- *   pixelX --- normalized distance (to pixels) - x plane
- *   pixelY --- normalized distance (to pixels) - y plane
+ *   pixelX --- normalized distance   (to pixels)    - x plane
+ *   pixelY --- normalized distance   (to pixels)    - y plane
  *   spinX  --- normalized spin speed (use for zoom) - x plane
  *   spinY  --- normalized spin speed (use for zoom) - y plane
  *

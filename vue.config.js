@@ -1,6 +1,4 @@
-const routes = []
 const webpackPlugins = []
-
 const path = require('path')
 const webpack = require('webpack')
 const config = require('./package.json')
@@ -12,19 +10,15 @@ if (process.env.NODE_ENV === 'development') {
   webpackPlugins.push(new webpack.NamedModulesPlugin())
 }
 
-(function () {
+const routes = pages.map(page => {
   if (config.multilanguage) {
     Object.keys(languages).forEach((lang) => {
-      Array.from(pages, page => {
-        routes.push(`/${lang}${page.path}`)
-      })
-    })
-  } else {
-    Array.from(pages, page => {
-      routes.push(page.path)
+      return `/${lang}${page.path}`
     })
   }
-})()
+
+  return page.path
+})
 
 module.exports = {
   publicPath: '/',
@@ -32,7 +26,21 @@ module.exports = {
   runtimeCompiler: true,
 
   css: {
-    modules: true
+    modules: true,
+
+    loaderOptions: {
+      sass: {
+        indentedSyntax: true,
+        // data: `@import "~@/variables.sass"`,
+        includePaths: [path.resolve(__dirname, './src')]
+      },
+
+      scss: {
+        // Global variables:
+        // data: `@import "~@/variables.scss";`,
+        includePaths: [path.resolve(__dirname, './src')]
+      }
+    }
   },
 
   pluginOptions: {
@@ -52,7 +60,7 @@ module.exports = {
     plugins: webpackPlugins,
 
     resolve: {
-      extensions: ['.ts', '.js', '.vue', '.json'],
+      extensions: ['.vue', '.ts', '.js', '.json'],
 
       alias: {
         modernizr$: path.resolve(__dirname, '.modernizrrc'),

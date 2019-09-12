@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import pages from '../pages.json'
+import pages from '@/pages.json'
 
 import config from '../../package.json'
 import { language, prerenderer } from '@/platform'
@@ -16,7 +16,7 @@ interface Route {
   path: string
 }
 
-let routes: Array<Route> = Array.from(pages, (page: Route) => {
+let routes: Array<Route> = pages.map((page: Route) => {
   return {
     name: page.name,
     path: page.path,
@@ -40,7 +40,7 @@ if (config.multilanguage) {
   possibleLanguages = possibleLanguages.substring(0, possibleLanguages.lastIndexOf('|'))
 
   routes.forEach(route => {
-    route.path = `/:language(${possibleLanguages})${route.path}`
+    route.path = `/:language(${possibleLanguages})${route.path}/`
 
     if (prerenderer) {
       const duplicate: Route = {

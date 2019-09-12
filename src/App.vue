@@ -1,9 +1,6 @@
 <template>
   <div id="app">
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div> -->
+    <SiteHeader />
 
     <transition appear mode="out-in">
       <router-view class="page" />
@@ -13,10 +10,15 @@
 
 <script lang="ts">
 import Vue from 'vue'
+import SiteHeader from '@/organisms/SiteHeader'
 import { copyInterface } from '@/utils/interface'
 
 export default Vue.extend({
   name: 'App' as string,
+
+  components: {
+    SiteHeader
+  },
 
   props: {
     version: {

@@ -1,8 +1,8 @@
 <template>
-  <div class="home-page">
+  <main class="home-page">
     <img alt="Vue logo" src="@/assets/img/logo.png">
     <span translate-comment="Welcome Message" v-translate>Welcome!</span>
-  </div>
+  </main>
 </template>
 
 <script lang="ts">
