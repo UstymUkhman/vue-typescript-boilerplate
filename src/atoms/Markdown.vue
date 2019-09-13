@@ -11,7 +11,7 @@ export default Vue.extend({
 
     tag: {
       type: String,
-      default: 'span',
+      default: 'div',
       required: false
     },
 
@@ -23,7 +23,8 @@ export default Vue.extend({
   },
 
   render (create) {
-    const template = getTemplate(this.$props.text, this.$props.tag, this.$props.inline)
+    const tag = this.$props.inline && this.$props.tag === 'div' ? 'span' : this.$props.tag
+    const template = getTemplate(this.$props.text, tag, this.$props.inline)
     const compiled = Vue.compile(template)
 
     const scope = {
@@ -39,8 +40,8 @@ export default Vue.extend({
     }
 
     return create({
-      render: compiled.render.bind(scope)
-      name: 'Markdown',
+      render: compiled.render.bind(scope),
+      name: 'Markdown'
     })
   }
 })

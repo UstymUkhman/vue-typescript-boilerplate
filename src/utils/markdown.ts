@@ -6,11 +6,12 @@ const getTemplate = (text: any, rootTag: string = 'span', inline: boolean = fals
     return console.error('[markdown] When using inline option you must specify a root tag')
   }
 
-  const md = inline ? (rootTag ? `<${rootTag}>` : '') + markdown.renderInline(text) + (rootTag ? `</${rootTag}>` : '') :
-                      (rootTag ? `<${rootTag}>` : '') + markdown.render(text) + (rootTag ? `</${rootTag}>` : '')
+  const md = !inline
+    ? (rootTag ? `<${rootTag}>` : '') + markdown.render(text) + (rootTag ? `</${rootTag}>` : '')
+    : (rootTag ? `<${rootTag}>` : '') + markdown.renderInline(text) + (rootTag ? `</${rootTag}>` : '')
 
   return md.replace(/<a href="([\w]+)"[ ]*(title="([^"]*)")?[^>]*>([^<]+)<\/a>/igm, (match, p1, p2, p3, p4) => {
-    return `<router-link :to="{name: \'${p1}\'${(p2 ? `, params: { ${p3} }` : '')}}">${p4}</router-link>`
+    return `<router-link :to="{name: '${p1}'${(p2 ? `, params: { ${p3} }` : '')}}">${p4}</router-link>`
   })
 }
 

@@ -2,18 +2,21 @@
   <main class="home-page">
     <section class="home-page-content">
       <img alt="Vue logo" src="@/assets/img/logo.png">
-      <span translate-comment="Welcome Message" v-translate>Welcome!</span>
+      <Markdown :text="$gettext('Welcome!')" inline />
     </section>
   </main>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import Markdown from '@/atoms/Markdown'
 
 export default Vue.extend({
   name: 'Home' as string,
 
-  // centered
+  components: {
+    Markdown
+  },
 
   metaInfo () {
     return {
