@@ -5,8 +5,8 @@
   "description": "A Vue boilerplate written in TypeScript.",
   "author": "Ustym Ukhman <ustym.ukhman@gmail.com>",
   "scripts": {
-    "serve": "vue-cli-service serve --mode development",
-    "build": "vue-cli-service build --mode production",
+    "start": "vue-cli-service serve --mode development",
+    "build": "vue-cli-service build --mode production && node prerender.js",
     "lint": "vue-cli-service lint",
     "lint:style": "vue-cli-service lint:style",
     "locale:extract": "node node_modules/vue-webpack-gettext/extract --output locale/template.pot --src src",
