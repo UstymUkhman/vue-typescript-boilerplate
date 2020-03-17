@@ -43,7 +43,7 @@ if (config.multilanguage) {
   })
 
   routes = routes.concat([{
-    path: `/:language(\\w{2,2}\\b)/*`,
+    path: '/:language(\\w{2,2}\\b)/*',
     redirect: (to: any): string => {
       return `/${getValidLanguage()}/${to.params[0]}`
     }

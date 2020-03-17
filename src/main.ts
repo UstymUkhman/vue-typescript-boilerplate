@@ -4,17 +4,17 @@ import 'console-polyfill'
 // import 'object-fit-images'
 import 'intersection-observer'
 
-import './service-worker'
-import './plugins/locale'
-import './plugins/analytics'
+import '@/service-worker'
+import '@/plugins/locale'
+import '@/plugins/analytics'
 
 // IE10 polyfill for dynamic imports:
 // import 'core-js/modules/es.array.iterator'
 
 import Vue from 'vue'
-import App from './App.vue'
+import App from '@/App.vue'
 import config from '../package.json'
-import router from './plugins/router'
+import router from '@/plugins/router'
 
 import axios from 'axios'
 import Meta from 'vue-meta'

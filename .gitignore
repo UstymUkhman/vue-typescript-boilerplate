@@ -1,6 +1,7 @@
-.DS_Store
-node_modules
 /dist
+.DS_Store
+tslint.xml
+node_modules
 
 # local env files
 .env.local

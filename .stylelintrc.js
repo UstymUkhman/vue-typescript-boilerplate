@@ -1,6 +1,6 @@
 module.exports = {
   root: true,
-  'extends': 'stylelint-config-standard',
+  extends: 'stylelint-config-standard',
 
   rules: {
     'block-closing-brace-newline-after': null,
@@ -14,7 +14,7 @@ module.exports = {
     'max-nesting-depth': 3,
 
     'at-rule-no-unknown': [true, {
-      'ignoreAtRules': [
+      ignoreAtRules: [
         'include', 'function', 'mixin', 'content', 'at-root',
         'for', 'if', 'else', 'each', 'return'
       ]

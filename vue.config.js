@@ -34,19 +34,26 @@ module.exports = {
   runtimeCompiler: true,
 
   css: {
-    modules: true,
+    requireModuleExtension: true,
 
     loaderOptions: {
       sass: {
         indentedSyntax: true,
-        // data: `@import "~@/variables.sass"`,
-        includePaths: [path.resolve(__dirname, './src')]
+        // Set global variables:
+        prependData: '@import "~@/variables.sass"',
+
+        sassOptions: {
+          includePaths: [path.resolve(__dirname, './src')]
+        }
       },
 
       scss: {
-        // Global variables:
-        // data: `@import "~@/variables.scss";`,
-        includePaths: [path.resolve(__dirname, './src')]
+        // Set global variables:
+        // prependData: '@import "~@/variables.scss";',
+
+        sassOptions: {
+          includePaths: [path.resolve(__dirname, './src')]
+        }
       }
     }
   },
@@ -72,9 +79,9 @@ module.exports = {
 
       alias: {
         modernizr$: path.resolve(__dirname, '.modernizrrc'),
-        '~': path.resolve(__dirname, 'src'),
-        'vue$': 'vue/dist/vue.esm.js',
-        '@': path.resolve('src'),
+        '~': path.resolve(__dirname, './src'),
+        '@': path.resolve(__dirname, './src'),
+        vue$: 'vue/dist/vue.esm.js',
         '@three': 'three/src'
       }
     }

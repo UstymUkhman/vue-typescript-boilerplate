@@ -1,39 +1,48 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "strict": true,
-    "jsx": "preserve",
-    "importHelpers": true,
+    "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
+    "importHelpers": true,
+
+    "target": "esnext",
+    "module": "esnext",
     "sourceMap": true,
+    "jsx": "preserve",
     "baseUrl": ".",
+    "strict": true,
+
     "types": [
-      "vue-meta",
-      "webpack-env"
+      "webpack-env",
+      "vue-meta"
     ],
+
     "paths": {
       "@/*": [
         "src/*"
       ]
     },
+
     "lib": [
-      "esnext",
-      "dom",
       "dom.iterable",
-      "scripthost"
+      "scripthost",
+      "esnext",
+      "dom"
     ]
   },
+
   "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
-    "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "./src/**/*",
+    "./src/**/*.ts",
+    "./src/**/*.tsx",
+    "./src/**/*.vue",
+    "./tests/**/*.ts",
+    "./tests/**/*.tsx"
   ],
+
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "locale",
+    "public"
   ]
 }

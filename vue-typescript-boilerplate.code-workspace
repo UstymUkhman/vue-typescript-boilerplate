@@ -1,17 +1,20 @@
 {
-	"folders": [
-		{
-			"path": "."
-		}
-	],
 	"settings": {
-		"js-import.filesToScan": "**/*.{jsx,js,tsx,ts,vue}",
+    "js-import.filesToScan": "**/*.{jsx,js,tsx,ts,vue}",
 		"js-import.plainFileSuffix": "css,less,sass,svg",
-		"js-import.semicolon": false,
+    "git.ignoreLimitWarning": true,
+    "js-import.semicolon": false,
+
 		"js-import.alias": {
-		"@": "/src",
-		"@three": "three/src"
-	},
-	"git.ignoreLimitWarning": true
-  }
+      "@three": "three/src",
+      "@": "/src",
+    }
+  },
+
+  "folders": [
+    {
+      "name": "vue-typescript-boilerplate",
+      "path": "."
+    }
+  ]
 }

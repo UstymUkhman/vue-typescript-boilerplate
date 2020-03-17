@@ -15,7 +15,6 @@
 <script lang="ts">
 import Vue from 'vue'
 import SiteHeader from '@/organisms/SiteHeader'
-import { copyInterface } from '@/utils/interface'
 
 export default Vue.extend({
   name: 'App' as string,
@@ -50,8 +49,9 @@ export default Vue.extend({
   },
 
   mounted () {
-    // Welcome Message
+    // Translated welcome message on console:
     const welcome: string = this.$gettext('Welcome!')
+    console.log(welcome)
   },
 
   metaInfo () {
