@@ -3,6 +3,7 @@ import MarkdownIt from 'markdown-it'
 
 const getTemplate = (text: any, rootTag: string = 'span', inline: boolean = false) => {
   if (inline && !rootTag) {
+    // eslint-disable-next-line no-console
     return console.error('[markdown] When using inline option you must specify a root tag')
   }
 

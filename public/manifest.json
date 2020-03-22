@@ -1,6 +1,7 @@
 {
   "name": "boilerplate",
   "short_name": "boilerplate",
+  "start_url": "/",
   "icons": [
     {
      "src": "./assets/icons/android-icon-36x36.png",

@@ -25,14 +25,15 @@ export default Vue.extend({
   render (create) {
     const tag = this.$props.inline && this.$props.tag === 'div' ? 'span' : this.$props.tag
     const template = getTemplate(this.$props.text, tag, this.$props.inline)
-    const compiled = Vue.compile(template)
+    const compiled = Vue.compile((template as string))
+    const parent: any = this.$parent
 
     const scope = {
-      _renderProxy: this.$parent._renderProxy,
-      _c: this.$parent._c,
-      _v: this.$parent._v,
-      _m: this.$parent._m,
+      _renderProxy: parent._renderProxy,
       _staticTrees: [],
+      _c: parent._c,
+      _v: parent._v,
+      _m: parent._m,
 
       $options: {
         staticRenderFns: compiled.staticRenderFns

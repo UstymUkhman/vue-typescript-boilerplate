@@ -2,13 +2,16 @@
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
+    "strictNullChecks": false,
     "esModuleInterop": true,
+    "noImplicitAny": false,
     "importHelpers": true,
 
-    "target": "esnext",
-    "module": "esnext",
+    "module": "es2015",
     "sourceMap": true,
     "jsx": "preserve",
+    "allowJs": true,
+    "target": "es5",
     "baseUrl": ".",
     "strict": true,
 

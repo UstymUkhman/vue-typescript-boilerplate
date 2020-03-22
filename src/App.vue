@@ -14,7 +14,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import SiteHeader from '@/organisms/SiteHeader'
+import SiteHeader from '@/organisms/SiteHeader.vue'
 
 export default Vue.extend({
   name: 'App' as string,

@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import Markdown from '@/atoms/Markdown'
+import Markdown from '@/atoms/Markdown.vue'
 
 export default Vue.extend({
   name: 'Home' as string,

@@ -29,7 +29,7 @@ export default Vue.extend({
 
   computed: {
     randomQuote () {
-      return this.quotes.random ? capitalize(this.quotes.random) : ''
+      return (this as any).quotes.random ? capitalize((this as any).quotes.random) : ''
     }
   },
 

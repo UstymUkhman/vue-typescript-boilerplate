@@ -16,8 +16,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import SitePages from '@/molecules/SitePages'
-import LanguageSelector from '@/atoms/LanguageSelector'
+import SitePages from '@/molecules/SitePages.vue'
+import LanguageSelector from '@/atoms/LanguageSelector.vue'
 
 export default Vue.extend({
   name: 'SiteHeader' as string,
