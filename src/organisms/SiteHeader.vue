@@ -38,9 +38,12 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
+@import 'variables';
+
 header {
   justify-content: space-between;
   box-shadow: 0 1px 1px 0 #ddd;
+  background-color: $white;
   box-sizing: border-box;
   flex-direction: row;
 

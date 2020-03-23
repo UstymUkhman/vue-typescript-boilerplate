@@ -48,12 +48,6 @@ export default Vue.extend({
     }
   },
 
-  mounted () {
-    // Translated welcome message on console:
-    const welcome: string = this.$gettext('Welcome!')
-    console.log(welcome)
-  },
-
   metaInfo () {
     return {
       title: ' ',
@@ -144,8 +138,8 @@ body,
   padding: 0;
   margin: 0;
 
+  top: 51px;
   left: 0;
-  top: 0;
 }
 
 // h1 {

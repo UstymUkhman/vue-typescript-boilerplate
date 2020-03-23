@@ -7,11 +7,11 @@
     "noImplicitAny": false,
     "importHelpers": true,
 
-    "module": "es2015",
+    "target": "esnext",
+    "module": "esnext",
     "sourceMap": true,
     "jsx": "preserve",
     "allowJs": true,
-    "target": "es5",
     "baseUrl": ".",
     "strict": true,
 

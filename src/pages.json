@@ -4,6 +4,10 @@
     "name": "Home"
   },
   {
+    "name": "Map",
+    "path": "/map"
+  },
+  {
     "name": "RestAPI",
     "path": "/restAPI"
   }
